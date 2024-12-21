@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Island+Moments&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --primary-color: #70c3e9;
+  --secondary-color: #328eb9;
+  --heading-color: #1E293B;
+  --text-color: #64748B;
+  --font-name: "Montserrat", sans-serif;
+  /* --subtitle-font-name: "Island Moments", cursive; */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-name);
+}
+
+section {
+  padding: 50px 0px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-color);
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+ul {
+  list-style: none;
+}
+
+.primary__btn {
+  background: var(--secondary-color) !important;
+  border: none !important;
+  border-radius: 50px !important;
+  padding: 0.4rem 1.5rem !important;
+}
+
+.primary__btn a {
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: #fff;
+}
+.primary__btn a:hover {
+  color: inherit;
+}
+.secondary__btn {
+  background: transparent !important;
+  color: #0b2727 ;
+  border: none !important;
+  font-weight: 500 !important;
+}
+
+.secondary__btn a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: var(--heading-color);
+}
+
+.secondary__btn a:hover {
+  color: inherit;
+}
+
+/* Button hover effect */
+.primary__btn,
+.secondary__btn {
+  transition: transform 0.5s ease, background-color 0.5s ease !important;
+  border-radius: 50px !important;
+}
+
+.primary__btn:hover,
+.secondary__btn:hover {
+  transform: scale(1.05) !important;
+  background-color: var(--primary-color) !important; 
+}
+
+/* Button click effect */
+.primary__btn:active,
+.secondary__btn:active {
+  transform: scale(0.95) !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+  
+}
+
+.section__subtitle {
+  background: var(--secondary-color);
+  font-family: var(--subtitle-font-name);
+  width: max-content;
+  padding: 0px 0.5rem;
+  padding-right: 1rem;
+
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: var(--heading-color);
+}
+
