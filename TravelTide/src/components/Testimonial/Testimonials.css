@@ -1,0 +1,9 @@
+/* Light Mode Styles */
+.light-mode .testimonial p {
+    color: #000; /* Default text color for light mode */
+}
+
+/* Dark Mode Styles */
+.dark-mode .testimonial p {
+    color: #b1d0ee; /* Text color for dark mode */
+}

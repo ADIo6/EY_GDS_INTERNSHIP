@@ -50,6 +50,9 @@
     font-size: 1rem;
     color: var(--heading-color);
 }
+.dark-mode .login__form input{
+    color: #3b3b3b;
+}
 
 .login__form input:focus{
     outline:none;
@@ -59,6 +62,16 @@
     background: var(--heading-color) !important;
     width: 100%;
     color: #fff !important;
+}
+
+.dark-mode .auth__btn {
+    background: #3b3b3b !important; /* Change background color in dark mode */
+    color: #fff !important; /* Ensure text color remains white */
+}
+
+.dark-mode .auth__btn:hover {
+    background: #fff !important; /* Change hover background color in dark mode */
+    color: #3b3b3b !important; /* Ensure text color remains white on hover */
 }
 
 .login__form p{

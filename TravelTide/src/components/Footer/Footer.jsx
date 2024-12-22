@@ -4,6 +4,7 @@ import { Col, Container, ListGroup, ListGroupItem, Row } from 'reactstrap'
 
 import { Link } from 'react-router-dom'
 import logo from '../../assets/images/logo3.jpeg' ;
+import logo5 from '../../assets/images/logo5.jpeg' ;
 
 const quick__links=[
   {
@@ -36,7 +37,7 @@ const quick__links2=[
 
 ];
 
-const Footer = () => {
+const Footer = ({ darkMode }) => {
   const year = new Date().getFullYear()
   return (
     <footer className="footer">
@@ -44,7 +45,7 @@ const Footer = () => {
         <Row>
           <Col lg='3'>
           <div className="logo">
-          <img src={logo} alt="" />
+          <img src={darkMode ? logo5 : logo} alt="" />
           <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
              Possimus, necessitatibus.</p>
           </div>

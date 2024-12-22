@@ -1,15 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Island+Moments&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
 :root {
   --primary-color: #70c3e9;
   --secondary-color: #328eb9;
   --heading-color: #1E293B;
   --text-color: #64748B;
+  --accent-color:#fff;
   --font-name: "Montserrat", sans-serif;
-  /* --subtitle-font-name: "Island Moments", cursive; */
+  --subtitle-font-name: "Satisfy", serif; 
 }
 
+.dark-mode {
+  --primary-color: #3B82F6;
+  --secondary-color: #1E40AF;
+  --heading-color: #E2E8F0;
+  --text-color: #CBD5E1;
+  --accent-color:#232a3a;
+  background-color: #0F172A; /* Dark background for the page */
+}
 * {
   margin: 0;
   padding: 0;
@@ -30,7 +41,12 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--heading-color);
+  color: var(--heading-color) !important;
+}
+h1{
+  background: linear-gradient(to right, #556064, var(--secondary-color),#7cdcff) !important; 
+  background-clip: text !important;
+  color: transparent !important;
 }
 
 a {
@@ -56,11 +72,13 @@ ul {
 .primary__btn a:hover {
   color: inherit;
 }
+
 .secondary__btn {
   background: transparent !important;
-  color: #0b2727 ;
+  /* color: #0b2727 ; */
   border: none !important;
   font-weight: 500 !important;
+  color: var(--heading-color) !important;
 }
 
 .secondary__btn a {
@@ -95,10 +113,10 @@ ul {
 }
 
 .section__subtitle {
-  background: var(--secondary-color);
+  background: linear-gradient(45deg, var(--secondary-color), #99d5f3);
   font-family: var(--subtitle-font-name);
   width: max-content;
-  padding: 0px 0.5rem;
+  padding: 5px 15px;
   padding-right: 1rem;
 
   border-radius: 50px;

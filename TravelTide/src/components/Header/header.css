@@ -5,8 +5,8 @@
 }
 
 .logo img{
-    width: 30%;
-    height: 50%;
+    width: clamp(10vw, 17vw, 18vw);
+    height: clamp(5vh, 12vh, 13.5vh);
 }
 .menu{
     margin-bottom: 0 ;
@@ -24,7 +24,6 @@
     font-weight: 500;
     font-size: 1.1rem;
     padding: 10px 25px;
-    
 }
 
 .nav__item a.active__link{
@@ -53,5 +52,26 @@
     left: 0;
     box-shadow: 3px 3px 8px -3px #ddd;
     z-index: 999;
+    
 }
 
+/* .header.sticky__header {
+    background-color: #fff !important; 
+    box-shadow: 3px 3px 8px -3px #ddd; 
+  } */
+  
+  /* Sticky Header Styles for Dark Mode */
+  .header.dark-mode.sticky__header {
+    background-color: #0F172A ; 
+    box-shadow: 3px 3px 8px -3px #333;
+  }
+
+/* .dark__light{
+    color: var(--heading-color);
+} */
+.dark-mode .mobile__menu .ri-menu-line {
+    color: #fff; /* Change to white when dark mode is active */
+  }
+  
+ 
+  

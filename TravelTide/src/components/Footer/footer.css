@@ -27,6 +27,21 @@
     color: var(--text-color);
     font-size: 1.1rem;
 }
+/* Styles for dark mode */
+
+  
+  .dark-mode .footer__quick-links .list-group-item {
+    background-color: #0F172A; /* Dark mode background color */
+    color: #f8f9fa; /* Dark mode text color */
+  }
+  
+  .dark-mode .footer__quick-links .list-group-item a {
+    color: #f8f9fa; /* Dark mode link color */
+  }
+  
+  .dark-mode .footer__quick-links .list-group-item a:hover {
+    color: #007bff; /* Dark mode hover link color */
+  }
 
 .footer__quick-links h6 span i{
     color: var(--secondary-color);

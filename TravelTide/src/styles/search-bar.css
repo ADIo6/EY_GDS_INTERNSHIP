@@ -7,15 +7,26 @@
     width: max-content;
     margin-top: 50px;
 }
+
+.dark-mode .search__bar{
+    box-shadow: rgba(247 246 247 / 0.16) 1px 0px 15px 0px;
+}
 .form__group span{
     font-size: 1.8rem;
     color: #001A6E;
 }
+.dark-mode .form__group span{
+    color: #6a77a1;
+}
+
 .form__group input{
     border: none;
     font-size: 0.9rem;
     color: var(--heading-color);
     font-weight: 500;
+}
+.dark-mode .inputs{
+    background-color: #0F172A;
 }
 .form__group input:focus{
 outline: none;

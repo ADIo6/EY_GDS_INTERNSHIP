@@ -14,12 +14,36 @@ import MasonryImagesGallery from '../components/image-gallery/MasonryImagesGalle
 import Testimonials from '../components/Testimonial/Testimonials'
 import Newsletter from '../shared/Newsletter'
 
+import CountUp from 'react-countup';
+import { useInView } from 'react-intersection-observer'
+
+
+
+const formatNumber = (number) => {
+  if (number >= 1000) {
+    return (number / 1000).toFixed(0) + 'K' + '+';
+  }
+  return number;
+};
 const Home = () => {
+  //this will enable the count up fucntion when its visible on screen instead when the page is reloaded
+  const { ref, inView } = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
+
+
+
+
+
   return (
     <>
+     
     <Container>
       <Row>
         <Col  lg="6">
+    
+
         <div className="hero__content">
           <div className="hero__subtitle d-flex align-items-center">
             <Subtitle subtitle={'Know Before You Go'}/>
@@ -37,7 +61,7 @@ const Home = () => {
         </Col>
         <Col lg="2">
         <div className="hero__img-box mt-4">
-          <video src={heroVideo} alt="" controls/>
+          <video src={heroVideo} alt="" autoPlay muted loop/>
         </div>
         </Col>
         <Col lg="2">
@@ -48,6 +72,7 @@ const Home = () => {
         <SearchBar/>
       </Row>
     </Container>
+
     <section>
       <Container>
         <Row>
@@ -72,6 +97,7 @@ const Home = () => {
       </Container>
     </section>
 
+
     <section>
       <Container>
         <Row>
@@ -82,17 +108,19 @@ const Home = () => {
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
           <br />
            Quam veniam eveniet voluptate voluptatibus.</p>
-           <div className="counter__wrapper d-flex align-items-center gap-5">
+           <div className="counter__wrapper d-flex align-items-center gap-5" ref={ref}>
             <div className="counter__box">
-              <span>12K+</span>
+              <span>
+                { inView && <CountUp start={0} end={12000} duration={4} formattingFn={formatNumber}  />}
+              </span>
               <h6>Successful trip</h6>
             </div>
             <div className="counter__box">
-              <span>2K+</span>
+              <span>{ inView && <CountUp start={0} end={2000} duration={4} formattingFn={formatNumber}  />}</span>
               <h6>Regular clients</h6>
             </div>
             <div className="counter__box">
-              <span>15</span>
+              <span>{ inView && <CountUp start={0} end={15} duration={4} formattingFn={formatNumber}  />}</span>
               <h6>Years experience</h6>
             </div>
            </div>
@@ -106,6 +134,8 @@ const Home = () => {
         </Row>
       </Container>
     </section>
+
+
     <section>
       <Container>
         <Row>
@@ -134,6 +164,7 @@ const Home = () => {
       </Container>
     </section>
     <Newsletter/>
+    
     </>
   )
 }

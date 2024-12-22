@@ -8,7 +8,10 @@
 .card{
     border: none !important;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+    background-color: var(--accent-color) !important;
+
 }
+
 .tour__img{
     position: relative;
 }
