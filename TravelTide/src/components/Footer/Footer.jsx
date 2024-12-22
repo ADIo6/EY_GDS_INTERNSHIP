@@ -101,7 +101,7 @@ const Footer = ({ darkMode }) => {
       <span><i class="ri-map-pin-line"></i></span>
       Address:
     </h6>
-    <p className='mb-0'>Sylhet, Bangladesh</p>
+    <p className='mb-0'>Kolkata, India</p>
       </ListGroupItem>
   
       <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-3'>
@@ -109,7 +109,7 @@ const Footer = ({ darkMode }) => {
       <span><i class="ri-mail-line"></i></span>
       Email:
     </h6>
-    <p className='mb-0'>email01@gmail.com</p>
+    <p className='mb-0'>work.adi06@gmail.com</p>
       </ListGroupItem>
       <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-3'>
     <h6 className='mb-0 d-flex align-items-center gap-2'>
@@ -122,7 +122,7 @@ const Footer = ({ darkMode }) => {
           </Col>
           <Col lg='12' className='text-center pt-5'>
           <p className='copyright'>
-            Copyright {year}, design and develop by </p>
+            Copyright {year}, design and develop by Adil Ahmed </p>
           </Col>
         </Row>
       </Container>

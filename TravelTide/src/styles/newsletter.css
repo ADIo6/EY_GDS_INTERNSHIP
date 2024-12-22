@@ -1,7 +1,10 @@
 .newsletter{
-    /* background: #cae5f4; */
+    background: #cae5f4;
     padding: 0;
     margin-top: 3rem;
+}
+.dark-mode .newsletter{
+    background: #332872;
 }
 .newsletter__img img{
     width: 100%;
@@ -28,6 +31,9 @@
     border: none;
     font-size: 1rem;
     color: var(--heading-color);
+}
+.dark-mode .newsletter__input, .dark-mode input{
+    background: #0F172A;
 }
 
 .newsletter__input input:focus{

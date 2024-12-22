@@ -66,12 +66,75 @@
     box-shadow: 3px 3px 8px -3px #333;
   }
 
-/* .dark__light{
-    color: var(--heading-color);
-} */
 .dark-mode .mobile__menu .ri-menu-line {
-    color: #fff; /* Change to white when dark mode is active */
+    color: #fff; 
   }
   
  
-  
+
+/* Responsive styles */
+@media (max-width: 992px) {
+    .header {
+        height: 70px;
+        line-height: 70px;
+        padding: 0 15px;
+    }
+
+    .logo img {
+        width: clamp(12vw, 20vw, 22vw);
+        height: clamp(6vh, 10vh, 11vh);
+    }
+
+    .separator {
+        height: 30px;
+    }
+    .navigation ul li{
+        width: 50%;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .header {
+        height: 60px;
+        line-height: 60px;
+        padding: 0 10px;
+    }
+
+    .logo img {
+        width: clamp(7vw, 17vw, 19vw);
+        height: clamp(4vh, 8vh, 10vh);
+    }
+
+    .menu {
+        display: none;
+    }
+    .navigation ul li{
+        width: 50%;
+    }
+    .mobile__menu {
+        display: block;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 576px) {
+    .header {
+        height: 50px;
+        line-height: 50px;
+        padding: 0 5px;
+    }
+
+    .logo img {
+        width: clamp(5vw, 16vw, 17vw);
+        height: clamp(3vh, 7vh, 8vh);
+    }
+
+    .separator {
+        display: none;
+    }
+    .navigation{
+        width: 100%;
+    }
+}

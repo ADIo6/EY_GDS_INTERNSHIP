@@ -92,7 +92,7 @@ const TourDetails = () => {
     <div className="review__input">
       <input type="text" ref={reviewMsgRef} 
       placeholder='share your thoughts' 
-      required/>
+      required/> 
       <button className="btn primary__btn text-white" type='submit'>
         Submit
       </button>
@@ -111,7 +111,7 @@ const TourDetails = () => {
             "en-US", options
           )}</p>
         </div>
-        <span className='d-flex align-items-center'>
+        <span className='d-flex align-items-center '>
           5<i class="ri-star-fill"></i>
         </span>
       </div>

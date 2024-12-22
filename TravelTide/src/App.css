@@ -118,10 +118,34 @@ ul {
   width: max-content;
   padding: 5px 15px;
   padding-right: 1rem;
-
   border-radius: 50px;
   font-weight: 500;
   font-size: 1.7rem;
   color: var(--heading-color);
 }
 
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .section__subtitle {
+      font-size: 1rem;
+      padding: 4px 12px;
+      padding-right: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section__subtitle {
+      font-size: 1rem;
+      padding: 3px 10px;
+      padding-right: 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .section__subtitle {
+      font-size: 1rem;
+      padding: 2px 8px;
+      padding-right: 0.7rem;
+  }
+}

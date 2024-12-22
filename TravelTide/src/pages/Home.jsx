@@ -29,7 +29,7 @@ const Home = () => {
   //this will enable the count up fucntion when its visible on screen instead when the page is reloaded
   const { ref, inView } = useInView({
     threshold: 0.2,
-    triggerOnce: true,
+    triggerOnce: false,
   });
 
 

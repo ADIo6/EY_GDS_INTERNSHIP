@@ -108,3 +108,33 @@
     /* margin-top: 1rem; */
 }
 
+/* Responsive styles */
+@media (max-width: 992px) {
+    .testimonial__title {
+        font-size: 2rem;
+    }
+
+    .experience__countent p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonial__title {
+        font-size: 1.8rem;
+    }
+
+    .experience__countent p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .testimonial__title {
+        font-size: 1.5rem;
+    }
+
+    .experience__countent p {
+        font-size: 0.85rem;
+    }
+}

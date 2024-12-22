@@ -10,6 +10,9 @@
     border: 1px solid rgb(229, 231,235);
     padding: 2rem;
 }
+.dark-mode .tour__info, .dark-mode .tour__reviews{
+    border: 1px solid rgb(101, 110, 128);
+}
 .tour__info h2{
     font-size: 1.5rem;
 }
@@ -72,6 +75,10 @@
     width: 100%;
     padding: 0.5rem 0;
     border: none;
+}
+.dark-mode .review__input input{
+    background: #0F172A;
+    color: #fff;
 }
 .review__input input:focus{
     outline: none;
