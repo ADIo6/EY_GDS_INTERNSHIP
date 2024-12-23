@@ -42,7 +42,7 @@ const Home = () => {
     <Container>
       <Row>
         <Col  lg="6">
-    
+      
 
         <div className="hero__content">
           <div className="hero__subtitle d-flex align-items-center">

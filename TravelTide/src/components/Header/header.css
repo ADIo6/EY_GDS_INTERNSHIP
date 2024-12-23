@@ -134,7 +134,88 @@
     .separator {
         display: none;
     }
-    .navigation{
+    .nav__wrapper{
+        width: 90%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.navigation {
+    display: flex;
+    
+}
+
+@media (max-width: 768px) {
+    .navigation {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: var(--accent-color);
+        width: 60%;
+        border-radius: 15px;
+        height: auto;
+        flex-direction: column;
+        align-items: flex-end;
+        padding: 15px 5px;
+        display: none;
+    }
+
+    .navigation.menu-open {
+        display: flex;
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 10px;
         width: 100%;
+    }
+
+    .nav__item {
+        width: 100%;
+    }
+
+
+    .dark-mode .mobile__menu .ri-close-line {
+        color: #fff;
+    }
+
+    .mobile__menu {
+        display: block;
+        font-size: 1.5rem;
+        cursor: pointer;
     }
 }
