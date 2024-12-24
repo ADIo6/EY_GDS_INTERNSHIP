@@ -1,0 +1,10 @@
+.masonry__img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+  
+  .masonry__img-container {
+    margin-bottom: 1rem; /* Add margin to the bottom of each image */
+  }
