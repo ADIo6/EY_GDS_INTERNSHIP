@@ -47,7 +47,7 @@ export const verifyAdmin =(req,res,next)=>{
         if( req.user.role ==='admin'){
             next()
         }else{
-          return  res.status(401).json({success:false,msg:"you're not authorize"}) 
+          return  res.status(401).json({success:false,msg:"Admin only. You're not authorize"}) 
         }
     })
 }

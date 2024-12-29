@@ -1,10 +1,13 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, useContext } from "react";
 import { Container, Row, Button } from "reactstrap";
 import { Link, NavLink } from "react-router-dom";
 
 import logo from "../../assets/images/logo3.jpeg";
 import logo5 from "../../assets/images/logo5.jpeg";
 import "./header.css";
+
+// import { AuthContext } from '../context/AuthContext';
+
 const nav__links = [
   {
     path: "/home",
@@ -18,10 +21,22 @@ const nav__links = [
     path: "/tours",
     display: "Tours",
   },
+  
+  // {
+  //   path: "/bookings",
+  //   display: "Bookings"
+  // }
 ];
+
+// Displaying booking link only if user is logged in
+// const [ isLoggedIn ] = useContext(AuthContext);
+// if(isLoggedIn){
+//   nav__links.push({
+//     path: "/bookings",
+//     display: "Bookings"})
+// }
 const Header = ({ toggleDarkMode, darkMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -60,7 +75,7 @@ const Header = ({ toggleDarkMode, darkMode }) => {
             </div>
             {/* =====logo end ===== */}
             {/* =====menu===== */}
-            <div className={`navigation ${isMenuOpen ? "menu-open" : ""}`}>
+            <div className={`navigation ${isMenuOpen} ? "menu-open" : ""}`}>
               <ul className="menu d-flex align-items-center gap-3">
                 {nav__links.map((item, index) => (
                   <li className="nav__item" key={index}>

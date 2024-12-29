@@ -1,56 +1,68 @@
 import Booking from '../models/Booking.js'
 
 // create new booking
-export const createBooking = async (req,res)=>{
-    const newBooking = new Booking(req.body)
+export const createBooking = async (req, res) => {
+    const { userId, userEmail } = req.user; // Extract userId and userEmail from the request
+    const newBooking = new Booking({
+        ...req.body,
+        userId,
+        userEmail
+    });
     
     try {
         const savedBooking = await newBooking.save()
-        res.status(200).json({success:true ,message:'your tour is booked',data:savedBooking})
+        res.status(200).json({ success: true, message: 'your tour is booked', data: savedBooking })
     } catch (err) {
-        res.status(500).json({success:false ,message:'internal server error'})
+        res.status(500).json({ success: false, message: 'internal server error adi' })
     }
 };
 
 // get single booking
-export const getBooking = async(req,res)=>{
+export const getBooking = async (req, res) => {
     const id = req.params.id
     try {
         const book = await Booking.findById(id)
-        res
-        .status(200)
-        .json({
-            success:true,
-            message:'booking found',data:book})
+        res.status(200).json({
+            success: true,
+            message: 'booking found',
+            data: book
+        })
     } catch (err) {
-        res
-        .status(404)
-        .json({success:false,message:'booking not found'})
+        res.status(404).json({ success: false, message: 'booking not found' })
     }
 }
 
-// get all booking
-export const getAllBooking = async(req,res)=>{
-    
+// get all bookings
+export const getAllBooking = async (req, res) => {
     try {
-        const books = await Booking.find(id)
-        res
-        .status(200)
-        .json({
-            success:true,
-            message:'booking found',
-            data:books,})
+        const books = await Booking.find() // it was .find(id),since we are getting all the bookings so no need to use id as it will only give one booking as a result
+        res.status(200).json({
+            success: true,
+            message: 'bookings found',
+            data: books
+        })
     } catch (err) {
-        res
-        .status(500)
-        .json({success:false,message:'internal server errr'})
+        res.status(500).json({ success: false, message: 'internal server error' })
     }
 }
 
-// edit booking 
-
-// delete booking
 
 // reschedule booking 
+export const rescheduleBooking = async (req, res) => {
+    try {
+        await Booking.findByIdAndUpdate(req.params.id, req.body);
+        res.status(200).json({ success: true, message: 'Booking rescheduled' });    
+    } catch (err) {
+        res.status(500).json({ success: false, message: 'Internal server error' });
+    }
+}
 
 // cancel booking
+export const cancelBooking = async (req, res) => { 
+    try {
+        await Booking.findByIdAndDelete(req.params.id);
+        res.status(200).json({ success: true, message: 'Booking canceled' });
+    } catch (err) {
+        res.status(500).json({ success: false, message: 'Internal server error' }); 
+    }
+}

@@ -8,6 +8,7 @@ import SearchBar from '../shared/SearchBar'
 import TourCard from '../shared/TourCard'
 import Newsletter from '../shared/Newsletter'
 
+// import Bookings from '../pages/Bookings'
 const Tours = () => {
 
 const [pageCount, setPageCount]=useState(0);
@@ -21,6 +22,16 @@ useEffect(()=>{
   return (
 <>
 <CommonSection title={"All Tours"}/>
+
+{/* <section>
+  <Container>
+    <Row>
+     <Bookings/>
+    </Row>
+  </Container>
+</section> */}
+
+
 <section>
   <Container>
     <Row>
