@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken'
 
 // user registration
 export const register = async(req,res)=>{
-    const {username,email,password, photo} = req.body;
+    const {username,email,password, photo, role} = req.body;
     try { 
         const existingUser = await User.findOne({email});
         if(existingUser){
@@ -20,7 +20,7 @@ export const register = async(req,res)=>{
             email,
             password:hash,
             photo,
-            // role: role || 'user'
+            role: role || 'user'
         })
          
         await newUser.save()

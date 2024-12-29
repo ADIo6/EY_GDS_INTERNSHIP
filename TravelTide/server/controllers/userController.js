@@ -1,26 +1,26 @@
 import User from '../models/User.js';
 
 
-// export const createAdmin = async (req, res) => {
-//   try {
-//     const existingAdmin = await User.findOne({ role: "admin" });
-//     if (existingAdmin) {
-//       return res.status(400).json({ message: "Admin user already exists" });
-//     }
+export const createAdmin = async (req, res) => {
+  try {
+    const existingAdmin = await User.findOne({ role: "admin" });
+    if (existingAdmin) {
+      return res.status(400).json({ message: "Admin user already exists" });
+    }
 
-//     const admin = new User({
-//       username: "admin123",
-//       email: "admin@example.com",
-//       password: "securepassword123", // Hash passwords in real scenarios
-//       role: "admin",
-//     });
-//     await admin.save();
+    const admin = new User({
+      username: "admin123",
+      email: "admin@example.com",
+      password: "securepassword123", // Hash passwords in real scenarios
+      role: "admin",
+    });
+    await admin.save();
 
-//     res.status(201).json({ message: "Admin user created successfully", admin });
-//   } catch (error) {
-//     res.status(500).json({ message: "Error creating admin user", error });
-//   }
-// };
+    res.status(201).json({ message: "Admin user created successfully", admin });
+  } catch (error) {
+    res.status(500).json({ message: "Error creating admin user", error });
+  }
+};
 //create new User
 export const createUser = async (req,res)=>{
     const newUser = new User(req.body);
