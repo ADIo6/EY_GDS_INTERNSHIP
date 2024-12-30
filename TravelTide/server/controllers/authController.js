@@ -4,12 +4,19 @@ import jwt from 'jsonwebtoken'
 
 // user registration
 export const register = async(req,res)=>{
-    const {username,email,password, photo, role} = req.body;
+    const {username, email, password, photo, role} = req.body;
     try { 
         const existingUser = await User.findOne({email});
         if(existingUser){
-            return res.status(401).json({success:false, message: 'User already exist'})
+            return res.status(401).json({success:false, message: 'User already exists'})
         }
+        // this is a check condition for not allowing multiple admin users
+        // if (role === "admin" ) {
+        //     const existingAdmin = await User.findOne({ role: "admin" });
+        //     if (existingAdmin) {
+        //         return res.status(400).json({ message: "Admin user already exists" });
+        //     }
+        // }
         
         // hashing password
         const salt =  bcrypt.genSaltSync(10);
@@ -18,7 +25,7 @@ export const register = async(req,res)=>{
         const newUser = new User({
             username,
             email,
-            password:hash,
+            password: hash,
             photo,
             role: role || 'user'
         })
