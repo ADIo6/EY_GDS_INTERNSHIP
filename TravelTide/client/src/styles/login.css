@@ -64,6 +64,9 @@
     color: #fff !important;
 }
 
+.dark-mode .login__form input {
+    color: #fff !important; /* Ensure text color remains white */
+}
 .dark-mode .auth__btn {
     background: #3b3b3b !important; /* Change background color in dark mode */
     color: #fff !important; /* Ensure text color remains white */
