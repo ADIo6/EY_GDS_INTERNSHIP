@@ -51,16 +51,16 @@ const Footer = ({ darkMode }) => {
           </div>
           <div className="social__links d-flex align-items-center gap-4">
           <span>
-            <Link tp='#'><i class="ri-youtube-line"></i></Link>
+            <Link tp='#'><i className="ri-youtube-line"></i></Link>
           </span>
           <span>
-            <Link tp='#'><i class="ri-github-fill"></i></Link>
+            <Link tp='#'><i className="ri-github-fill"></i></Link>
           </span>
           <span>
-            <Link tp='#'><i class="ri-facebook-circle-line"></i></Link>
+            <Link tp='#'><i className="ri-facebook-circle-line"></i></Link>
           </span>
           <span>
-            <Link tp='#'><i class="ri-instagram-line"></i></Link>
+            <Link tp='#'><i className="ri-instagram-line"></i></Link>
           </span>
           </div>
           </Col>
@@ -98,7 +98,7 @@ const Footer = ({ darkMode }) => {
 
       <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-3'>
     <h6 className='mb-0 d-flex align-items-center gap-2'>
-      <span><i class="ri-map-pin-line"></i></span>
+      <span><i className="ri-map-pin-line"></i></span>
       Address:
     </h6>
     <p className='mb-0'>Kolkata, India</p>
@@ -106,14 +106,14 @@ const Footer = ({ darkMode }) => {
   
       <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-3'>
     <h6 className='mb-0 d-flex align-items-center gap-2'>
-      <span><i class="ri-mail-line"></i></span>
+      <span><i className="ri-mail-line"></i></span>
       Email:
     </h6>
     <p className='mb-0'>work.adi06@gmail.com</p>
       </ListGroupItem>
       <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-3'>
     <h6 className='mb-0 d-flex align-items-center gap-2'>
-      <span><i class="ri-phone-fill"></i></span>
+      <span><i className="ri-phone-fill"></i></span>
       Phone:
     </h6>
     <p className='mb-0'>+0123456789</p>

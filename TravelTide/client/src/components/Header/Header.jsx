@@ -1,12 +1,11 @@
 import React, { useRef, useEffect, useState, useContext } from "react";
 import { Container, Row, Button } from "reactstrap";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 import logo from "../../assets/images/logo3.jpeg";
 import logo5 from "../../assets/images/logo5.jpeg";
 import "./header.css";
-
-// import { AuthContext } from '../context/AuthContext';
+import { AuthContext } from "../../context/AuthContext";
 
 const nav__links = [
   {
@@ -21,25 +20,15 @@ const nav__links = [
     path: "/tours",
     display: "Tours",
   },
-  
-  // {
-  //   path: "/bookings",
-  //   display: "Bookings"
-  // }
 ];
 
-// Displaying booking link only if user is logged in
-// const [ isLoggedIn ] = useContext(AuthContext);
-// if(isLoggedIn){
-//   nav__links.push({
-//     path: "/bookings",
-//     display: "Bookings"})
-// }
 const Header = ({ toggleDarkMode, darkMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+  const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const headerRef = useRef(null);
 
@@ -52,7 +41,6 @@ const Header = ({ toggleDarkMode, darkMode }) => {
         headerRef.current.classList.remove("sticky__header");
       }
     };
-  
 
     window.addEventListener("scroll", stickyHeaderFunc);
 
@@ -60,6 +48,18 @@ const Header = ({ toggleDarkMode, darkMode }) => {
       window.removeEventListener("scroll", stickyHeaderFunc);
     };
   }, []);
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    navigate("/login");
+    // Perform any additional logout logic (e.g., clearing tokens, redirecting)
+  };
+
+  const dynamicNavLinks = isLoggedIn
+    ? nav__links.map((link) =>
+        link.path === "/about" ? { ...link, path: "/bookings", display: "Bookings" } : link
+      )
+    : nav__links;
 
   return (
     <header
@@ -75,9 +75,9 @@ const Header = ({ toggleDarkMode, darkMode }) => {
             </div>
             {/* =====logo end ===== */}
             {/* =====menu===== */}
-            <div className={`navigation ${isMenuOpen} ? "menu-open" : ""}`}>
+            <div className={`navigation ${isMenuOpen ? "menu-open" : ""}`}>
               <ul className="menu d-flex align-items-center gap-3">
-                {nav__links.map((item, index) => (
+                {dynamicNavLinks.map((item, index) => (
                   <li className="nav__item" key={index}>
                     <NavLink
                       to={item.path}
@@ -101,13 +101,21 @@ const Header = ({ toggleDarkMode, darkMode }) => {
             <div className="separator"></div>
 
             <div className="nav__right d-flex align-items-center gap-3">
-              <div className="nav__btns d-flex align-items-center gap-4  ">
-                <Button className="btn secondary__btn">
-                  <Link to={"/login"}>Login</Link>
-                </Button>
-                <Button className="btn primary__btn">
-                  <Link to={"/register"}>Register</Link>
-                </Button>
+              <div className="nav__btns d-flex align-items-center gap-4">
+                {isLoggedIn ? (
+                  <Button className="btn secondary__btn" onClick={handleLogout}>
+                    Logout
+                  </Button>
+                ) : (
+                  <>
+                    <Button className="btn secondary__btn">
+                      <Link to={"/login"}>Login</Link>
+                    </Button>
+                    <Button className="btn primary__btn">
+                      <Link to={"/register"}>Register</Link>
+                    </Button>
+                  </>
+                )}
               </div>
 
               <span

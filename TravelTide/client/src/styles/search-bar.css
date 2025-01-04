@@ -4,6 +4,7 @@
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
     width: 100%;
     max-width: 800px;
+    max-height: 95px;
     margin: 50px auto;
 }
 
@@ -120,13 +121,16 @@
     .form__group h6 {
         font-size: 0.8rem;
     }
+    .form__group h6 input{
+        font-size: 0.8rem;
+    }
 
     .form__group span {
         font-size: 1rem;
     }
 
     .search__icon i {
-        font-size: 1rem;
+        font-size: 1.5rem;
         padding: 0.2rem;
     }
 }
