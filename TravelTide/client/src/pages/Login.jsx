@@ -9,6 +9,12 @@ import { AuthContext } from '../context/AuthContext';
 
 const Login = () => {
   const navigate = useNavigate();
+
+  const [showPassword, setShowPassword] = useState(false);
+  const togglePassword = () => setShowPassword(!showPassword);
+
+  const [ error, setError ] = useState('');
+
   const { setIsLoggedIn } = useContext(AuthContext);
   const [credentials, setCredentials] = useState({
     email: undefined,
@@ -26,8 +32,10 @@ const Login = () => {
       console.log('Login successful:', data);
       setIsLoggedIn(true);
       navigate('/home');
+      setError('');
       // Handle successful login (e.g., redirect, store token, etc.)
     } catch (error) {
+      setError('Something went wrong!! Please try again later');
       console.error('Login failed:', error);
       // Handle login error
     }
@@ -57,15 +65,24 @@ const Login = () => {
                       onChange={handleChange}
                     />
                   </FormGroup>
-                  <FormGroup>
+                  <FormGroup className="password-field">
                     <input
-                      type="password"
+                      type={showPassword ? "text" : "password"}
                       id="password"
+                      name="password"
                       placeholder="Password"
                       required
                       onChange={handleChange}
                     />
+                    <i
+                      className={`fas ${showPassword ? "fa-eye-slash" : "fa-eye"}`}
+                      onClick={togglePassword}
+                      
+                    ></i>
                   </FormGroup>
+
+                  {/* {error && <Error>{error}</Error>} */}
+
                   <Button className="btn secondary__btn auth__btn" type="submit">
                     Login
                   </Button>

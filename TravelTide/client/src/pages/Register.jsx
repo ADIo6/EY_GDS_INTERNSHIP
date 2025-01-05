@@ -10,6 +10,8 @@ import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
   const navigate = useNavigate(); 
+   const [showPassword, setShowPassword] = useState(false);
+    const togglePassword = () => setShowPassword(!showPassword);
   const [credentials, setCredentials] = useState({
     username: undefined,
     email: undefined,
@@ -66,15 +68,20 @@ const Register = () => {
                       onChange={handleChange}
                     />
                   </FormGroup>
-                  <FormGroup>
-                    <input
-                      type="password"
+                  <FormGroup className="password-field">
+                    <input 
+                      type={showPassword ? "text" : "password"}
                       id="password"
                       placeholder="Password"
                       required
                       onChange={handleChange}
                     />
+                    <i
+                      className={`fas ${showPassword ? "fa-eye-slash" : "fa-eye"}`}
+                      onClick={togglePassword}
+                      ></i>
                   </FormGroup>
+
                   <Button className="btn secondary__btn auth__btn" type="submit">
                     Create Account
                   </Button>
