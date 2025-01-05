@@ -61,11 +61,16 @@
     outline:none;
 }
 
-.error{font-size: 10px;
-color: #ff6161;
-line-height: 0;
-margin-top:10px;
-font-weight:600;}
+.error{
+    font-size: 10px;
+    display: grid;
+    color: var(--error-color);
+    line-height: 0;
+    margin-top:10px;
+    font-weight:600;
+    text-align: center;
+    white-space: nowrap;
+}
 
 .auth__btn{
     background: var(--heading-color) !important;

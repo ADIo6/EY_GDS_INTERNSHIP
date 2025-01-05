@@ -65,7 +65,9 @@
     background-color: #0F172A ; 
     box-shadow: 3px 3px 8px -3px #333;
   }
-
+  .mobile__menu{
+    display:none;
+  }
 .dark-mode .mobile__menu .ri-menu-line {
     color: #fff; 
   }

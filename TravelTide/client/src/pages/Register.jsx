@@ -10,6 +10,9 @@ import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
   const navigate = useNavigate(); 
+
+  const [error, setError] = useState('');
+
    const [showPassword, setShowPassword] = useState(false);
     const togglePassword = () => setShowPassword(!showPassword);
   const [credentials, setCredentials] = useState({
@@ -28,10 +31,16 @@ const Register = () => {
       const data = await registerUser(credentials);
       console.log('Registration successful:', data);
       navigate('/login');
+      setError('Successful Login', data);
       // Handle successful registration (e.g., redirect, show message, etc.)
     } catch (error) {
-      console.error('Registration failed:', error);
-      // Handle registration error
+      if (error.message) {
+        setError(error.message);
+      } else {
+        setError('Something went wrong! Please try again later.');
+        // console.error('Login failed:', error);
+        // Handle login error
+      }
     }
   };
 
@@ -86,6 +95,7 @@ const Register = () => {
                     Create Account
                   </Button>
                 </Form>
+                {error && <div className="error">{error}</div>}
                 <p>
                   Already have an account? <Link to="/login">Login</Link>
                 </p>

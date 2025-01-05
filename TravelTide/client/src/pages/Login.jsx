@@ -30,14 +30,19 @@ const Login = () => {
     try {
       const data = await loginUser(credentials);
       console.log('Login successful:', data);
+      
       setIsLoggedIn(true);
       navigate('/home');
       setError('');
       // Handle successful login (e.g., redirect, store token, etc.)
     } catch (error) {
-      setError('Something went wrong!! Please try again later');
-      console.error('Login failed:', error);
-      // Handle login error
+      if (error.message) {
+        setError(error.message);
+      } else {
+        setError('Something went wrong! Please try again later.');
+        // console.error('Login failed:', error);
+        // Handle login error
+      }
     }
   };
 
@@ -81,12 +86,13 @@ const Login = () => {
                     ></i>
                   </FormGroup>
 
-                  {/* {error && <Error>{error}</Error>} */}
+
 
                   <Button className="btn secondary__btn auth__btn" type="submit">
                     Login
                   </Button>
                 </Form>
+                  {error && <div className="error">{error}</div>}
                 <p>
                   Don't have an account? <Link to="/register">Create</Link>
                 </p>

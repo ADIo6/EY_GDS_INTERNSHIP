@@ -11,6 +11,7 @@
   --heading-color: #1E293B;
   --text-color: #64748B;
   --accent-color:#fff;
+  --error-color:#850909;
   --font-name: "Montserrat", sans-serif;
   --subtitle-font-name: "Satisfy", serif; 
 }
@@ -21,6 +22,7 @@
   --heading-color: #E2E8F0;
   --text-color: #CBD5E1;
   --accent-color:#232a3a;
+  --error-color:#c58e8e;
   background-color: #0F172A; /* Dark background for the page */
 }
 * {
