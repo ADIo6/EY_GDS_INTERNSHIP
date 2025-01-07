@@ -7,6 +7,7 @@ import logo5 from "../../assets/images/logo5.jpeg";
 import "./header.css";
 import { AuthContext } from "../../context/AuthContext";
 
+
 const nav__links = [
   {
     path: "/home",
@@ -27,7 +28,7 @@ const Header = ({ toggleDarkMode, darkMode }) => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-  const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
+  const { isLoggedIn, setIsLoggedIn, userDetails } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const headerRef = useRef(null);
@@ -102,10 +103,12 @@ const Header = ({ toggleDarkMode, darkMode }) => {
 
             <div className="nav__right d-flex align-items-center gap-3">
               <div className="nav__btns d-flex align-items-center gap-4">
-                {isLoggedIn ? (
+                {isLoggedIn ? (<>
+                  <h5 className='mb-0 bg'>{userDetails|| "Guest"}</h5>
                   <Button className="btn secondary__btn" onClick={handleLogout}>
                     Logout
                   </Button>
+                  </>
                 ) : (
                   <>
                     <Button className="btn secondary__btn">

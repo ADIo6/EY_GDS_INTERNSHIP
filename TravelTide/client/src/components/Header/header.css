@@ -54,7 +54,11 @@
     z-index: 999;
     
 }
-
+.bg{
+    background: var(--secondary-color);
+    border-radius: 4px;
+    padding:5px 10px;
+}
 /* .header.sticky__header {
     background-color: #fff !important; 
     box-shadow: 3px 3px 8px -3px #ddd; 
