@@ -3,6 +3,11 @@ import Booking from '../models/Booking.js'
 // create new booking
 export const createBooking = async (req, res) => {
     const { userId, userEmail } = req.user; // Extract userId and userEmail from the request
+
+    if (!userId || !userEmail) {
+        return res.status(403).json({ success: false, message: "You're not authorized to access!!" });
+    }
+
     const newBooking = new Booking({
         ...req.body,
         userId,

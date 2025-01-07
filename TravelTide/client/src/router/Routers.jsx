@@ -3,7 +3,7 @@ import {Navigate, Route, Routes} from 'react-router-dom'
 import Home from '../pages/Home'
 import Tours from '../pages/Tours'
 import TourDetails from '../pages/TourDetails'
-// import Bookings from '../pages/Bookings'
+import Bookings from '../pages/Bookings'
 import Login from '../pages/Login'
 import About from '../pages/About';
 import Register from '../pages/Register'
@@ -18,7 +18,7 @@ const Routers = () => {
         <Route path='/home' element={<Home/>}/>
         <Route path='/tours' element={<Tours/>}/>
         <Route path='/tours/:id' element={<TourDetails/>}/>
-        {/* <Route path='/bookings' element={<Bookings/>}/> */} 
+        <Route path='/bookings' element={<Bookings/>}/> 
         <Route path='/login' element={<Login/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/register' element={<Register/>}/>

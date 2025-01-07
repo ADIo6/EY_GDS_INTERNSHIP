@@ -9,7 +9,7 @@
     "desc": "this is the description",
     "reviews": [],
 
-    "photo": "/tour-images/tour-img01.jpg",
+    "photo": "https://res.cloudinary.com/diad3z03m/image/upload/v1736111371/tour-img01_efqjpn.jpg",
     "featured": true
   },
   {
@@ -22,7 +22,7 @@
     "desc": "this is the description",
     "reviews": [],
 
-    "photo": "/tour-images/tour-img02.jpg",
+    "photo": "https://res.cloudinary.com/diad3z03m/image/upload/v1736111370/tour-img02_zzdzkx.jpg",
     "featured": true
   },
   {
@@ -35,7 +35,7 @@
     "desc": "this is the description",
     "reviews": [],
 
-    "photo": "/tour-images/tour-img03.jpg",
+    "photo": "https://res.cloudinary.com/diad3z03m/image/upload/v1736111371/tour-img03_kvjms5.jpg",
     "featured": true
   },
   {
@@ -48,7 +48,7 @@
     "desc": "this is the description",
     "reviews": [],
 
-    "photo": "/tour-images/tour-img04.jpg",
+    "photo": "https://res.cloudinary.com/diad3z03m/image/upload/v1736111370/tour-img04_rgux27.jpg",
     "featured": true
   },
   {
@@ -61,7 +61,7 @@
     "desc": "this is the description",
     "reviews": [],
 
-    "photo": "/tour-images/tour-img05.jpg",
+    "photo": "https://res.cloudinary.com/diad3z03m/image/upload/v1736111373/tour-img05_zg4u6j.jpg",
     "featured": true
   },
   {
@@ -74,7 +74,7 @@
     "desc": "this is the description",
     "reviews": [],
 
-    "photo": "/tour-images/tour-img06.jpg",
+    "photo": "https://res.cloudinary.com/diad3z03m/image/upload/v1736111370/tour-img06_s6c7tr.jpg",
     "featured": true
   },
   {
@@ -87,20 +87,7 @@
     "desc": "this is the description",
     "reviews": [],
 
-    "photo": "/tour-images/tour-img07.jpg",
-    "featured": true
-  },
-  {
-    "title": "Snowy Mountains, Thailand",
-    "city": "Bangkok",
-    "address": "Somewhere in Thailand",
-    "distance": 500,
-    "price": 99,
-    "maxGroupSize": 8,
-    "desc": "this is the description",
-    "reviews": [],
-
-    "photo": "/tour-images/tour-img03.jpg",
+    "photo": "https://res.cloudinary.com/diad3z03m/image/upload/v1736111370/tour-img07_apedff.jpg",
     "featured": true
   },
   {
@@ -113,7 +100,7 @@
     "desc": "this is the description",
     "reviews": [],
 
-    "photo": "/tour-images/tour-img08.jpg",
+    "photo": "https://res.cloudinary.com/diad3z03m/image/upload/v1736111372/tour-img08_rlnoej.jpg",
     "featured": false
   },
   {
@@ -126,7 +113,21 @@
     "desc": "this is the description",
     "reviews": [],
 
-    "photo": "/tour-images/tour-img09.jpg",
+    "photo": "https://res.cloudinary.com/diad3z03m/image/upload/v1736111371/tour-img09_uooezv.jpg",
     "featured": false
-  }
-]
+  },
+
+  {
+    "title": "Hotel Grand Oberoi",
+      "city": "Kolkata",
+      "address": "Somewhere in India",
+      "distance": 500,
+      "price": 199,
+      "maxGroupSize": 8,
+      "desc": "this is the description",
+      "reviews": [],
+  
+      "photo": "https://res.cloudinary.com/diad3z03m/image/upload/v1736121903/oberoi_e03ek3.jpg",
+      "featured": true
+    }
+  ]

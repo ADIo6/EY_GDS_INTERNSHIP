@@ -1,4 +1,3 @@
-
 import Tour from '../models/Tour.js';
 
 
@@ -69,25 +68,22 @@ export const deleteTour = async(req,res)=>{
 
 //getSingle tour
 export const getSingleTour = async(req,res)=>{
-    const id = req.params.id
+    const id = req.params.id;
    
     try {
-
-        const tour = await Tour.findById(id).populate('reviews')
-
+        const tour = await Tour.findById(id).populate('reviews');
         res.status(200).json({
             success:true,
-            message:'Successfully find',
+            message:'Successfully found',
             data:tour
         });
-        
     } catch (err) {
         res.status(404).json({
             success:false,
-            message:'not found',
+            message:'Tour not found',
         });
     }
-}
+};
 
 //getAll tour
 export const getAllTour = async(req,res)=>{

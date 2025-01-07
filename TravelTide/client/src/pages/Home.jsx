@@ -16,8 +16,8 @@ import Newsletter from '../shared/Newsletter'
 
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer'
-
-
+import { useState } from 'react'
+// import { fetchTours } from '../services/api';
 
 const formatNumber = (number) => {
   if (number >= 1000) {
@@ -32,10 +32,10 @@ const Home = () => {
     triggerOnce: false,
   });
 
+  const [tours, setTours] = useState([]);
 
 
-
-
+  
   return (
     <>
      
@@ -69,7 +69,7 @@ const Home = () => {
           <img src={heroImg02} alt="" />
         </div>
         </Col>
-        <SearchBar/>
+        {/* <SearchBar setTours={setTours}/> */}
       </Row>
     </Container>
 
