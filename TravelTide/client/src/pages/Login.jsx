@@ -16,7 +16,7 @@ const Login = () => {
 
   const [ error, setError ] = useState('');
 
-  const { isLoggedIn,setIsLoggedIn } = useContext(AuthContext);
+  const { setIsLoggedIn } = useContext(AuthContext);
   const { userDetails,setUserDetails } = useContext(AuthContext);
   const [credentials, setCredentials] = useState({
     email: undefined,

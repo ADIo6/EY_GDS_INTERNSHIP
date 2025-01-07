@@ -7,7 +7,7 @@ import heroImg02 from '../assets/images/hero-img02.jpg'
 import heroVideo from '../assets/images/hero-video.mp4'
 import experienceImg from '../assets/images/experience.png'
 import Subtitle from '../shared/Subtitle'
-import SearchBar from '../shared/SearchBar'
+// import SearchBar from '../shared/SearchBar'
 import ServiceList from '../services/ServiceList'
 import FeaturedTourList from '../components/Featured-tours/FeaturedTourList'
 import MasonryImagesGallery from '../components/image-gallery/MasonryImagesGallery'
@@ -16,12 +16,12 @@ import Newsletter from '../shared/Newsletter'
 
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer'
-import { useState } from 'react'
+// import { useState } from 'react'
 // import { fetchTours } from '../services/api';
 
 const formatNumber = (number) => {
   if (number >= 1000) {
-    return (number / 1000).toFixed(0) + 'K' + '+';
+    return `${(number / 1000).toFixed(0)}K+`;
   }
   return number;
 };
@@ -32,7 +32,7 @@ const Home = () => {
     triggerOnce: false,
   });
 
-  const [tours, setTours] = useState([]);
+  // const [tours, setTours] = useState([]);
 
 
   

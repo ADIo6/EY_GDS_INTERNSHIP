@@ -1,20 +1,20 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import './booking.css';
 import { Button, Form, FormGroup, ListGroup, ListGroupItem } from 'reactstrap';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../context/AuthContext';
+// import { AuthContext } from '../../context/AuthContext';
 import { createBooking } from '../../services/api'; // Import the createBooking function
 
 const Booking = ({ tour, avgRating }) => {
   const { price, reviews, title } = tour;
   const navigate = useNavigate();
-//   const { userDetails,setUserDetails } = useContext(AuthContext);
-    const userID = localStorage.getItem('userID');
-    const userName = localStorage.getItem('userName');
-    
+  const userID = localStorage.getItem('userID');
+  const username = localStorage.getItem('userName');
+
   const [credentials, setCredentials] = useState({
-    userID: userID || '', // Use dynamic user ID
-    userName: userName|| '',
+    userID: userID || '', 
+    username: username || '',
+    tourName: title,
     fullName: '',
     phone: '',
     guestSize: 1,
