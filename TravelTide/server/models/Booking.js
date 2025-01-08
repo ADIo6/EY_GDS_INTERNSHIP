@@ -2,11 +2,11 @@ import mongoose from "mongoose";
 
 const bookingSchema = new mongoose.Schema(
   {
-    userId: {
+    userID: {
       type: String,
       required: true
     },
-    userEmail: {
+    username: {
       type: String,
       required: true
     },

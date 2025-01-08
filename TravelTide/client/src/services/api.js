@@ -111,6 +111,15 @@ export const fetchTourById = async (id) => {
   }
 };
 
+export const featuredTours = async () => {
+  try {
+    const response = await axiosInstance.get('/api/v1/tours/featured');
+    return response.data;
+  } catch (error) {
+    throw error.response.data;
+  }
+};
+
 export const searchTour = async (searchParams) => {
   try {
     const response = await axiosInstance.get('/api/v1/tours/search/getTourBySearch', {
@@ -161,13 +170,22 @@ export const submitReview = async (tourId, reviewData) => {
   }
 };
 
-export const createBooking = async (bookingData)=>{
-  try{
-    const response = await axiosInstance.post('/api/v1/bookings', bookingData);
+export const createBooking = async (bookingData) => {
+  const userID = localStorage.getItem('userID'); // Retrieve userID from localStorage
+  const username = localStorage.getItem('userName'); // Retrieve username from localStorage
+  
+  if (!userID || !username) {
+    throw new Error("User ID or username not found. Please log in again.");
+  }
+  
+  const payload = { ...bookingData, userID, username }; // Add userID and username to the payload
+  
+  try {
+    const response = await axiosInstance.post('/api/v1/bookings', payload);
     return response.data;
-    
-  }catch(error){
+  } catch (error) {
     throw error.response.data;
   }
-}
+};
+
 // Add more API functions as needed

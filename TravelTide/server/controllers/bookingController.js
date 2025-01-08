@@ -2,18 +2,18 @@ import Booking from '../models/Booking.js'
 
 // create new booking
 export const createBooking = async (req, res) => {
-    const { userId, userEmail } = req.user; // Extract userId and userEmail from the request
+    // const { id: userID, username } = req.user; // Extract userId and userEmail from the request
 
-    if (!userId || !userEmail) {
-        return res.status(403).json({ success: false, message: "You're not authorized to access!!" });
-    }
+    // if (!userID || !username) {
+    //     return res.status(403).json({ success: false, message: "You're not authorized to access!!" });
+    // }
 
-    const newBooking = new Booking({
-        ...req.body,
-        userId,
-        userEmail
-    });
-    
+    // const newBooking = new Booking({
+    //     ...req.body,
+    //     userID,
+    //     username
+    // }); this part was not allowing the bookings to be made...
+    const newBooking = new Booking(req.body)
     try {
         const savedBooking = await newBooking.save()
         res.status(200).json({ success: true, message: 'your tour is booked', data: savedBooking })
