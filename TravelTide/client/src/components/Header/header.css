@@ -5,8 +5,8 @@
 }
 
 .logo img{
-    width: clamp(10vw, 17vw, 18vw);
-    height: clamp(5vh, 12vh, 13.5vh);
+    width: clamp(100px, 30%, 175px);
+    /* height: clamp(4vh, 10vh, 12vh); */
 }
 .menu{
     margin-bottom: 0 ;
@@ -86,10 +86,10 @@
         padding: 0 15px;
     }
 
-    .logo img {
+    /* .logo img {
         width: clamp(12vw, 20vw, 22vw);
         height: clamp(6vh, 10vh, 11vh);
-    }
+    } */
 
     .separator {
         height: 30px;
@@ -107,10 +107,10 @@
         padding: 0 10px;
     }
 
-    .logo img {
+    /* .logo img {
         width: clamp(7vw, 17vw, 19vw);
         height: clamp(4vh, 8vh, 10vh);
-    }
+    } */
 
     .menu {
         display: none;
@@ -132,10 +132,10 @@
         padding: 0 5px;
     }
 
-    .logo img {
+    /* .logo img {
         width: clamp(5vw, 16vw, 17vw);
-        height: clamp(3vh, 7vh, 8vh);
-    }
+        height: clamp(3vh, 4vh, 8vh);
+    } */
 
     .separator {
         display: none;
